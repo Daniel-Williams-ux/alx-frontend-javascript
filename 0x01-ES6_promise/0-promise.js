@@ -1,7 +1,7 @@
 //only make promise
 const getResponseFromAPI = new Promise((resolve, reject) => {
-  let responseFromAPI = true;
-  if (responseFromAPI) {
+ 
+  if (true) {
     resolve();
   } else {
     reject();
