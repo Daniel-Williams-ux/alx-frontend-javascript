@@ -1,11 +1,11 @@
-//only make promise
-const getResponseFromAPI = new Promise((resolve, reject) => {
- 
-  if (true) {
-    resolve();
-  } else {
-    reject();
-  }
-  /* eslint-enable */
-})
-export default getResponseFromAPI;
+export default function getResponseFromAPI() {
+  return new Promise((resolve, reject) => {
+    const error = false;
+
+    if (error) {
+      reject();
+    } else {
+      resolve();
+    }
+  });
+}
