@@ -1,5 +1,5 @@
 const getListStudents = () => {
-  let newArr = [
+  return = [
     {
       id: 1,
       firstName: 'Guillaume',
@@ -16,6 +16,5 @@ const getListStudents = () => {
       location: 'San Francisco',
     }
   ]
-    return newArr;
 }
 export default getListStudents();
