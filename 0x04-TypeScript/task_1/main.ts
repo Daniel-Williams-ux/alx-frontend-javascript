@@ -78,3 +78,35 @@ interface printTeacherFunction {
 const printDirector: printTeacherFunction = printTeacher;
 console.log(printDirector(director.firstName, director.lastName));
 console.log(printTeacher(teacher.firstName, teacher.lastName));
+
+//Writing a class
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+interface StudentClass {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const student = new StudentClass('Jane', 'Doe');
+console.log(student.workOnHomework());
+console.log(student.displayName());
