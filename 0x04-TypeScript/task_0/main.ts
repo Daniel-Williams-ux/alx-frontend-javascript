@@ -6,22 +6,34 @@ interface Student {
 }
 
 const student1: Student = {
-  firstName: 'Dwight',
-  lastName: 'Schroot',
-  age: 32,
-  location: 'The electric city',
+  firstName: "John",
+  lastName: "Doe",
+  age: 22,
+  location: "New York"
 };
 
 const student2: Student = {
-  firstName: 'Jim',
-  lastName: 'Halpert',
-  age: 31,
-  location: "Pam's heart",
+  firstName: "Jane",
+  lastName: "Doe",
+  age: 21,
+  location: "Los Angeles"
 };
 
-const students: Student[] = [student1, student2];
+const studentsList: Student[] = [student1, student2];
 
-console.log('Firstname\tLastName\tAge\tLocation');
-students.forEach((student) => {
-  console.log(`\n${student.firstName}\t\t${student.lastName}\t\t${student.age}\t${student.location}`);
+const table = document.createElement("table");
+
+studentsList.forEach(student => {
+  const row = document.createElement("tr");
+  const firstNameCell = document.createElement("td");
+  firstNameCell.textContent = student.firstName;
+  row.appendChild(firstNameCell);
+  
+  const locationCell = document.createElement("td");
+  locationCell.textContent = student.location;
+  row.appendChild(locationCell);
+  
+  table.appendChild(row);
 });
+
+document.body.appendChild(table);
